@@ -1,12 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,700,900|Open+Sans:400,700,900|Raleway:400,700,900);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700);
-/*-----------------------------------//
-//  MIXINS
-//-----------------------------------*/
-/*-----------------------------------//
-//  D.R.Y. CLASSES
-//-----------------------------------*/
-/*Text Aligns*/
+
 .textLeft {
   text-align: left;
 }
@@ -17,9 +11,6 @@
   text-align: center;
 }
 
-/*-----------------------------------//
-//  GENERAL
-//-----------------------------------*/
 body {
   font: 14px/1.5em "Open Sans";
   background: #F0F1FA;

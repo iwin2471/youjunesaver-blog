@@ -780,7 +780,7 @@ iframe {
 }
 
 
-#main-behance,#main-dribbble,#main-facebook,#main-google,#main-linked{
+#main-behance,#main-twitter,#main-facebook,#main-github,#main-linked{
 	position:absolute;
 	top:0;
 	height:100%;
@@ -789,12 +789,12 @@ iframe {
 }
 
 #main-behance{left:1%;}
-#main-dribbble{left:21%;}
+#main-twitter{left:21%;}
 #main-facebook{left:41%;}
-#main-google{left:61%;}
+#main-github{left:61%;}
 #main-linked{left:81%;}
 
-#behance,#dribbble,#facebook,#google,#linked{
+#behance,#twitter,#facebook,#github,#linked{
     font-family: 'socialicoregular';
 	position:absolute;
 	-webkit-font-smoothing: antialiased;
@@ -808,7 +808,7 @@ iframe {
 	margin-top:-25%;
 }
 
-#cadre-behance,#cadre-dribbble,#cadre-facebook,#cadre-google,#cadre-linked{
+#cadre-behance,#cadre-twitter,#cadre-facebook,#cadre-github,#cadre-linked{
 	position:absolute;
 	background-color:transparent;
 	height:90%;
@@ -819,9 +819,9 @@ iframe {
 	margin-left:5%;
 }
 
-#dribbble{margin-left:-12px;}
+#twitter{margin-left:-12px;}
 #facebook{margin-left:-8.5px;}
-#google{margin-left:-8px;}
+#github{margin-left:-8px;}
 #linked{margin-left:-10px;}
 #behance{margin-left:-15px;}
 
