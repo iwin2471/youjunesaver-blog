@@ -18,10 +18,6 @@ let router = express.Router();
 import {Users} from './mongo';
 let passport = require('./passport')(Users);
 
-
-//function
-require('./func');
-
 //set engin
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,24 +30,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
-  keys: ['h0t$ix'],
+  keys: ['johnsu'],
   cookie: {
     maxAge: 1000 * 60 * 60 // 유효기간 1시간
   }
-}))
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(CORS);
+
+//function
+require('./func');
 
 
 //router setting
 var index = require('./routes/index')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users, passport);
+var admin = require('./routes/admin')(express.Router(), Users, passport);
 
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/admin', admin);
 
 module.exports = app;
