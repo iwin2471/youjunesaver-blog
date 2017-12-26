@@ -1,38 +1,23 @@
 module.exports = (router, Users, passport) =>{
-  router.post('/signup', (req, res) => {
-    var params = ['id', 'passwd', 'name'];
-
-    if(check_param(req.body, params)){
-      const id = req.body.id;
-      const passwd = req.body.passwd;
-      const name = req.body.name;
-    
-      const new_user = new Users({
-        id: id,
-        passwd: passwd,
-        name: name,
-        token: rndString.generate()
-      });
-    
-      new_user.save((err, data)=>{
-        if(err) return res.status(400).send("save err");
-        return res.status(200).json(new_user);
-      });
-
-    }else{
-      return res.status(400).send("param missing or null");
-    } 
+  router.get('/signin', (req, res)=>{
+     return res.status(200).send("로그인 화면");
+   });
+  router.post('/signup', async (req, res) => {
+      const data = req.body;
+      console.log(data);
+      const new_user = new Users(data);
+      try{
+        var result = await new_user.save();
+      }catch(e){
+        if(e instanceof user_duplicate) return res.status(409).json({message:"already exist"});
+        if(e instanceof ValidationError) return res.status(400).json({message: e.message});
+        if(e instanceof paramsError) return res.status(400).json({message: e.message});
+      }
+      return res.status(200).json(result);
   })
   
-  .post('/signin', (req,res)=>{
-    var params = ['id', 'passwd'];
-    if(check_param(req.body, params)){
-      Users.findOne({id: req.body.id, passwd: req.body.passwd}, {__v:0, _id: 0, passwd: 0}, (err, user)=>{
-        if(err) return res.status(500).send("DB err");
-        if(user) return res.status(200).json(user);
-        else return res.status(404).send("incorrect id or passwd");
-      });
-    }else return res.status(400).send("param missing or null");
+  .post('/signin',passport.authenticate('local'), (req,res)=>{
+    res.redirect('/');  
   })
 
   .get('/auto/:token', (req, res)=>{
@@ -110,6 +95,11 @@ module.exports = (router, Users, passport) =>{
       });
     } else  res.status(401).send(req.user);
   })
+
+  .post('/logout', (req, res)=>{
+    req.logout();
+    return res.redirect('/');
+  });
 
 
   return router;
