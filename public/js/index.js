@@ -1,6 +1,6 @@
 const scroll = {};
 
-let getNowScroll = ()=>{
+function getNowScroll(){
   var de = document.documentElement;
   var b = document.body;
   var now = {};
@@ -14,10 +14,10 @@ function hamburger(){
   this.classList.toggle("hamburger--open");
   if(sectionContainer.style.display == ""){
     sectionContainer.style.display = "none";
-    nav_list.style.display = "";
+    nav_container.style.display = "";
   }else{
     sectionContainer.style.display = "";
-    nav_list.style.display = "none";
+    nav_container.style.display = "none";
   }
 }
 

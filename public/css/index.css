@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+html, body{
+  width:100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+
 body {
   background: #FFF;
   height: 100%;
@@ -91,27 +100,33 @@ body {
 
 #p2{
         background-color: #263238;
-        height: 25rem;
-        color: rgb(212, 212, 212);
+     height: 25rem;
+      color: rgb(212, 212, 212);
 }
 
 #p2 .intro-card{
-    display: block;
-    padding: 2rem;
+    display: flex;
+    padding: 1rem;
     background-color: rgb(38, 50, 56);
     color: rgb(212, 212, 212);
 }
 
 #p2 .intro-card p{
     font-size: 2em;
-    line-height: 1.7rem;
-    padding-top: 0.7rem;
+    line-height: 0.1rem;
+    padding-top: 0.2rem;
 }
 
 #p2 p{
     font-size: 1rem;
     line-height: 1.7rem;
     padding-top: 0.7rem;
+}
+
+#p3{
+    background-color: #263238;
+    height: 30rem;
+    color: rgb(212, 212, 212);
 }
 
 .page-card {
@@ -129,7 +144,8 @@ body {
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 18%;
+        max-width: 20%;
     border-radius: 5px;
 }
 
@@ -142,7 +158,7 @@ img {
 }
 
 .card_container {
-        bacogournd-color: #fff;
+    color: #fff;
     padding: 2px 16px;
 }
 
@@ -155,13 +171,25 @@ img {
      font-size: 3em;
 }
 
-#nav_list {
+#nav_container {
+    width:100%;
+    height: 100%;
+  background: url("/img/github.jpg") no-repeat;
+  background-size: cover;
+}
+
+
+.login_cover{
+  z-index:2;
+  width:100%;
+  height: 100%;
   position:absolute;
-  top:50%;
-  left:50%; 
-  width:300px; 
-  height:200px;
-  overflow:hidden;
-  margin-top:-150px;
-  margin-left:-100px;
+  display: flex;
+   right:0;
+   top:0;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+
+
 }

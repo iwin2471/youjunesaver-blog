@@ -1,6 +1,6 @@
 module.exports = (router, Users, passport) =>{
   router.get('/signin', (req, res)=>{
-     return res.status(200).send("로그인 화면");
+     return res.render("signin", {title: "iwin247::signin"});
    });
   router.post('/signup', async (req, res) => {
       const data = req.body;

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title><%= title %></title>
+      <meta charset="utf-8"/>
+      <link rel="stylesheet" type="text/css" href="/css/common.css">
+      <link rel="stylesheet" type="text/css" href="/css/index.css">
+      <link rel="stylesheet" type="text/css" href="/css/login.css">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/vue"></script>
+   </head>
+   <body id="body">
+      <div id="nav">
+         <hamburger-nav></hamburger-nav>
+      </div>
+  	<section id = "login_section">
+	<div id="login_cover">
+	<div class="login">
+        	<div class="login-screen">
+                <div class="app-title">
+                    <h1 id="title">login</h1>
+                </div>
+                    <div class="control-group id">
+	                        	<input type="text" class="login-field" value="" placeholder="username" id="login-name" required autocomplete="off" autofocus="auto" name="id_input">
+                	       </div>
+                    <div class="control-group pw">
+                            <input type="password" class="login-field" value="" placeholder="password" id="login-pass" required="required" autocomplete="off" name="pw_input">
+                    </div>
+                    <div class="control-group">
+                        <input type="button" class="btn sign" value="Sign up">
+                        <input type="submit" class="btn log" value="login">
+                    </div>
+            </div>
+            </div>
+        </div>
+     </section>
+   </body>
+</html>
